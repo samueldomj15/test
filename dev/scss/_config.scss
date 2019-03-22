@@ -1,0 +1,72 @@
+// colores
+$primary: hsl(215, 100%, 26%);
+$secondary: hsl(211, 81%, 64%);
+$darker: hsl(213, 21%, 8%);
+$dark: hsl(213, 21%, 20%);
+$gray: hsl(210, 14%, 75%);
+$white: hsl(0,0%,100%);
+$success: hsl(120, 70%, 58%);
+$warning: hsl(60, 80%, 60%);
+$danger: hsl(0, 80%, 60%);
+
+// tamaño de fuente
+$fonts: (
+    t1: 48px 70px,
+    t2: 36px 54px,
+    t3: 28px 42px,
+    txt-base: 16px 26px,
+    txt-small: 14px 24px,
+    txt-xsmall: 12px 23px
+);
+
+// grosor de fuente
+$regular: 400;
+$medium: 500;
+$bold: 600;
+
+// breakpoints
+$breakpoints: (
+    tablet: 768px,
+    desktop: 1024px,
+    widescreen: 1216px,
+    fullhd: 1440px
+);
+
+// margenes
+$mg-5: 5px;
+$mg-10: 10px;
+$mg-15: 15px;
+$mg-20: 20px;
+$mg-25: 25px;
+$mg-35: 35px;
+$mg-45: 45px;
+
+// aplica el tamaño de fuente y el interlineado
+@mixin font($size) {
+    font-size: nth(map-get($fonts, $size),1);
+    line-height: nth(map-get($fonts, $size),2);
+}
+
+// flexbox
+@mixin flexbox ($dflex, $flex-wrap, $flex-direction, $align-items, $justify-content, $align-content) {
+    display: $dflex;
+    flex-wrap: $flex-wrap;
+    flex-direction: $flex-direction;
+    align-items: $align-items;
+    justify-content: $justify-content;
+    align-content: $align-content;
+}
+
+// no deformacion de imasgen
+@mixin object-fit($wd, $hg, $object-fit) {
+    width: $wd;
+    height: $hg;
+    object-fit: $object-fit;
+}
+
+// aplica el media el breakpoint
+@mixin from($breakpoint) {
+    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+    }
+}

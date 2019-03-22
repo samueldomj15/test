@@ -1,0 +1,70 @@
+<!-- Input y label basicos -->
+<div class="field">
+    <label for="#" class="label">Label basic</label>
+    <input type="text" class="input" id="#" placeholder="text placeholder">
+</div>
+
+<!-- Input danger -->
+<div class="field">
+    <label for="#" class="label">Label error</label>
+    <input type="text" class="input danger" id="#" placeholder="input error">
+    <span class="help danger">Mensaje de error</span>
+</div>
+
+<!-- Input success -->
+<div class="field">
+    <label for="#" class="label">Label exitoso</label>
+    <input type="text" class="input success" id="#" placeholder="input exito">
+    <span class="help success">Mensaje de exito</span>
+</div>
+
+<!-- Select -->
+<div class="field">
+    <label for="#" class="label">Label select</label>
+    <div class="select">
+        <select id="#">
+            <option>México</option>
+            <option>Colombia</option>
+            <option>Perú</option>
+        </select>
+
+        <!-- icono del field -->
+        <i class="fa fa-chevron-down icon"></i>
+    </div>
+</div>
+
+<!-- Input con icono -->
+<div class="field">
+    <label for="#" class="label">Label icon</label>
+    <div class="control">
+        <input type="text" class="input" id="#" placeholder="input icon">
+
+        <!-- icono del field -->
+        <i class="fa fa-user icon"></i>
+    </div>
+</div>
+
+<!-- Textarea -->
+<div class="field">
+    <label for="#" class="label">Label textarea</label>
+    <textarea id="#" class="input textarea"></textarea>
+</div>
+
+
+
+<!-- 
+    == Instrucciones ==
+    
+    - se utiliza la clase .field para dar un espaciado inferior
+    - dentro de la clase .field se colocan los elementos hijos 
+      label.label y input.input
+    - para colocar un input con icono se utiliza la clase .control
+      como hijo de .field. Dentro de la clase .control se coloca
+      la clase .input, y a lado se coloca el icono con la clase i.icon
+      anidada con la clase del nombre del icono (.fa .fa-search) 
+    - para colocar un area de texto se utiliza la etiqueta textarea con
+      la clase .textarea anidada a la clase .input
+    - para colocar el select se utiliza la clase .select dentro de la 
+      clase .field, Dentro de la clase .select irá el select y a lado el icono
+      .icon y el nombre del icono (.fa .fa-chevron-down)
+-->

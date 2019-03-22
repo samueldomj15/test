@@ -1,0 +1,197 @@
+/* ===================================================================
+    Estilos de la barra de navegación
+=================================================================== */
+:root {
+    --bg-dropdown: hsl(0, 0%, 90%);
+    --hg-navbar: 80px;
+}
+
+.navbar {
+    // position: fixed; // descomentar si se requiere dejar fijo el navbar
+    position: relative; // default - comentar en caso de dejar fijo el navbar
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: var(--hg-navbar);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--white);
+    padding: 0 20px;
+    box-shadow: 0 2px 6px rgba($primary, .12);
+}
+
+.navbar__brand {
+    .navbar__logo {
+        width: 120px;
+    }
+}
+
+.navbar__toggle-menu {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border: 1px solid var(--gray);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.navbar__menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    // max-height: 300px; // por si se requiere dejar fijo el navbar
+    // overflow-y: auto; // descomentar por si se requiere dejar fijo el navbar
+    transform: translateX(-100%);
+    background-color: var(--white);
+    border-top: 2px solid var(--primary);
+    box-shadow: 0 0 10px rgba($primary, .24);
+    transition: transform 0.3s ease;
+}
+
+.navbar__item {
+    position: relative;
+    border-top: 1px solid rgba($gray, .3);
+}
+
+.navbar__link,
+.navbar__item-content {
+    display: block;
+    padding: 15px 20px;
+    color: var(--dark);
+}
+
+.navbar__dropdown {
+    height: 0;
+    overflow: hidden;
+    pointer-events: none;
+    background-color: var(--bg-dropdown);
+    transition: all 0.3s ease;
+
+    .navbar__link {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+.navbar__toggle-dropdown {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 40px;
+    text-align: center;
+    line-height: 50px;
+    color: var(--dark);
+    background-color: var(--bg-dropdown);
+    cursor: pointer;
+}
+
+// Muestra el menu al hacer click en el toggle-menu (Jquery)
+.navbar__menu.show {
+    transform: translateX(0);
+}
+
+// muestra el submenu al hacer click en el item (Jquery)
+.navbar__dropdown.show {
+    height: auto;
+    pointer-events: all;
+}
+
+.navbar__toggle-dropdown.rotate {
+    i {
+        transform: rotate(180deg);
+    }
+}
+
+// Apartir de pantalla de escritorio
+@include from(desktop) {
+    .navbar__toggle-menu {
+        display: none;
+    }
+
+    .navbar__menu {
+        position: static;
+        width: auto;
+        border-top: none;
+        box-shadow: none;
+        background: none;
+        transform: translateX(0);
+    }
+
+    .navbar__item {
+        display: inline-block;
+        margin-left: 10px;
+        border-top: none;
+    }
+
+    .navbar__link,
+    .navbar__item-content {
+        padding: 15px 8px;
+        color: var(--dark);
+        display: inline-block;
+    }
+
+    .navbar__toggle-dropdown {
+        position: static;
+        display: inline-block;
+        width: auto;
+        background: none;
+        margin-left: -5px;
+        color: var(--dark);
+    }
+
+    .navbar__dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 100;
+        min-width: 200px;
+        height: 0;
+        opacity: 0;
+        pointer-events: none;
+        background: var(--white);
+        border-top: 2px solid var(--primary);
+        box-shadow: 0 1px 6px 3px rgba($primary, .15);
+        transform: translateY(5px);
+        transition: transform 0.3s ease;
+        white-space: nowrap;
+        
+        .navbar__item {
+            display: block;
+            margin-left: 0;
+        }
+
+        .navbar__link {
+            display: block;
+        }
+    }
+
+    // Interaccion al hacer hover en el item
+    .navbar__item {
+        &:hover {
+            >.navbar__link {
+                color: var(--primary);
+            }
+
+            .navbar__toggle-dropdown {
+                i {
+                    transform: rotate(180deg);
+                    transition: all 0.3s ease;
+                }
+            }
+
+            .navbar__dropdown {
+                height: auto;
+                opacity: 1;
+                pointer-events: all;
+                transform: translateY(0);
+                transition: transform 0.3s ease;
+            }
+        }
+    }
+}

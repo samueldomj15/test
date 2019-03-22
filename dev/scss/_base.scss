@@ -1,0 +1,58 @@
+:root {
+    --primary: hsl(215, 100%, 26%);
+    --secondary: hsl(211, 81%, 64%);
+    --darker: hsl(219, 16%, 18%);
+    --dark: hsl(213, 21%, 20%);
+    --gray: hsl(210, 14%, 75%);
+    --grayspace: hsl(0,0%,46%);
+    --white: hsl(0,0%,100%);
+    --success: hsl(134, 41%, 83%);
+    --warning: hsl(45, 100%, 76%);
+    --danger: hsl(354, 70%, 77%);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6, p, figure {
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--darker);
+    font-weight: $bold;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}

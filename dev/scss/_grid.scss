@@ -1,0 +1,322 @@
+/* ===================================================================
+    Estilos de grid (flexbox, alineamiento, justifiacion del contenido)
+=================================================================== */
+:root {
+    --wd-container: 100%;
+    --max-wd-container: 1170px;
+    --spacing-x-column: 15px;
+}
+
+// Columnas
+.column-1-of-12 {
+    width: calc(8.333333% - var(--spacing-20));
+}
+
+.column-2-of-12 {
+    width: calc(16.666666% - var(--spacing-20));
+}
+
+.column-3-of-12 {
+    width: calc(25% - var(--spacing-20));
+}
+
+.column-4-of-12 {
+    width: calc(33.333333% - var(--spacing-20));
+}
+
+.column-5-of-12 {
+    width: calc(41.666665% - var(--spacing-20));
+}
+
+.column-6-of-12 {
+    width: calc(50% - var(--spacing-20));
+}
+
+.column-7-of-12 {
+    width: calc(58.333331% - var(--spacing-20));
+}
+
+.column-8-of-12 {
+    width: calc(66.666664% - var(--spacing-20));
+}
+
+.column-9-of-12 {
+    width: calc(74.999997% - var(--spacing-20));
+}
+
+.column-10-of-12 {
+    width: calc(83.333333% - var(--spacing-20));
+}
+
+.column-11-of-12 {
+    width: calc(91.666663% - var(--spacing-20));
+}
+
+.column-12-of-12 {
+    width: 100%;
+}
+
+// cambio de tamaño de columnas en pantallas de tablet 768px
+@include from(tablet) {
+    .column-1-of-12--tablet {
+        width: calc(8.333333% - var(--spacing-20));
+    }
+
+    .column-2-of-12--tablet {
+        width: calc(16.666666% - var(--spacing-20));
+    }
+
+    .column-3-of-12--tablet {
+        width: calc(25% - var(--spacing-20));
+    }
+
+    .column-4-of-12--tablet {
+        width: calc(33.333333% - var(--spacing-20));
+    }
+
+    .column-5-of-12--tablet {
+        width: calc(41.666665% - var(--spacing-20));
+    }
+
+    .column-6-of-12--tablet {
+        width: calc(50% - var(--spacing-20));
+    }
+
+    .column-7-of-12--tablet {
+        width: calc(58.333331% - var(--spacing-20));
+    }
+
+    .column-8-of-12--tablet {
+        width: calc(66.666664% - var(--spacing-20));
+    }
+
+    .column-9-of-12--tablet {
+        width: calc(74.999997% - var(--spacing-20));
+    }
+
+    .column-10-of-12--tablet {
+        width: calc(83.333333% - var(--spacing-20));
+    }
+
+    .column-11-of-12--tablet {
+        width: calc(91.666663% - var(--spacing-20));
+    }
+
+    .column-12-of-12--tablet {
+        width: calc(100% - var(--spacing-20));
+    }
+}
+
+// cambio de tamaño de columnas en pantallas de desktop 1024px
+@include from(desktop) {
+    .column-1-of-12--desktop {
+        width: calc(8.333333% - var(--spacing-20));
+    }
+
+    .column-2-of-12--desktop {
+        width: calc(16.666666% - var(--spacing-20));
+    }
+
+    .column-3-of-12--desktop {
+        width: calc(25% - var(--spacing-20));
+    }
+
+    .column-4-of-12--desktop {
+        width: calc(33.333333% - var(--spacing-20));
+    }
+
+    .column-5-of-12--desktop {
+        width: calc(41.666665% - var(--spacing-20));
+    }
+
+    .column-6-of-12--desktop {
+        width: calc(50% - var(--spacing-20));
+    }
+
+    .column-7-of-12--desktop {
+        width: calc(58.333331% - var(--spacing-20));
+    }
+
+    .column-8-of-12--desktop {
+        width: calc(66.666664% - var(--spacing-20));
+    }
+
+    .column-9-of-12--desktop {
+        width: calc(74.999997% - var(--spacing-20));
+    }
+
+    .column-10-of-12--desktop {
+        width: calc(83.333333% - var(--spacing-20));
+    }
+
+    .column-11-of-12--desktop {
+        width: calc(91.666663% - var(--spacing-20));
+    }
+
+    .column-12-of-12--desktop {
+        width: calc(100% - var(--spacing-20));
+    }
+}
+
+// cambio de tamaño de columnas en pantallas de widescreen 1216px
+@include from(widescreen) {
+    .column-1-of-12--widescreen {
+        width: calc(8.333333% - var(--spacing-20));
+    }
+
+    .column-2-of-12--widescreen {
+        width: calc(16.666666% - var(--spacing-20));
+    }
+
+    .column-3-of-12--widescreen {
+        width: calc(25% - var(--spacing-20));
+    }
+
+    .column-4-of-12--widescreen {
+        width: calc(33.333333% - var(--spacing-20));
+    }
+
+    .column-5-of-12--widescreen {
+        width: calc(41.666665% - var(--spacing-20));
+    }
+
+    .column-6-of-12--widescreen {
+        width: calc(50% - var(--spacing-20));
+    }
+
+    .column-7-of-12--widescreen {
+        width: calc(58.333331% - var(--spacing-20));
+    }
+
+    .column-8-of-12--widescreen {
+        width: calc(66.666664% - var(--spacing-20));
+    }
+
+    .column-9-of-12--widescreen {
+        width: calc(74.999997% - var(--spacing-20));
+    }
+
+    .column-10-of-12--widescreen {
+        width: calc(83.333333% - var(--spacing-20));
+    }
+
+    .column-11-of-12--widescreen {
+        width: calc(91.666663% - var(--spacing-20));
+    }
+
+    .column-12-of-12--widescreen {
+        width: calc(100% - var(--spacing-20));
+    }
+}
+
+// cambio de tamaño de columnas en pantallas de fullhd 1440px
+@include from(fullhd) {
+    .column-1-of-12--fullhd {
+        width: calc(8.333333% - var(--spacing-20));
+    }
+
+    .column-2-of-12--fullhd {
+        width: calc(16.666666% - var(--spacing-20));
+    }
+
+    .column-3-of-12--fullhd {
+        width: calc(25% - var(--spacing-20));
+    }
+
+    .column-4-of-12--fullhd {
+        width: calc(33.333333% - var(--spacing-20));
+    }
+
+    .column-5-of-12--fullhd {
+        width: calc(41.666665% - var(--spacing-20));
+    }
+
+    .column-6-of-12--fullhd {
+        width: calc(50% - var(--spacing-20));
+    }
+
+    .column-7-of-12--fullhd {
+        width: calc(58.333331% - var(--spacing-20));
+    }
+
+    .column-8-of-12--fullhd {
+        width: calc(66.666664% - var(--spacing-20));
+    }
+
+    .column-9-of-12--fullhd {
+        width: calc(74.999997% - var(--spacing-20));
+    }
+
+    .column-10-of-12--fullhd {
+        width: calc(83.333333% - var(--spacing-20));
+    }
+
+    .column-11-of-12--fullhd {
+        width: calc(91.666663% - var(--spacing-20));
+    }
+
+    .column-12-of-12--fullhd {
+        width: calc(100% - var(--spacing-20));
+    }
+}
+
+// columna que envuelve a todas las columnas
+.columns,
+.flex,
+.row {
+    @include flexbox(
+        flex,
+        wrap,
+        row,
+        stretch,
+        space-between,
+        null
+    );
+}
+
+.dnone {
+    display: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.align-items-start {
+    align-items: flex-start;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.align-items-end {
+    align-items: flex-end;
+}
+
+.align-items-stretch {
+    align-items: stretch;
+}
+
+.justify-content-start {
+    justify-content: flex-start;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-end {
+    justify-content: flex-end;
+}
+
+.justify-content-around {
+    justify-content: space-around;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}

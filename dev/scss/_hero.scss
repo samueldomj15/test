@@ -1,0 +1,95 @@
+/* ===================================================================
+    Estilos del Hero
+=================================================================== */
+:root {
+    --pd-x-content-hero: 20px;
+    
+    // es el ancho del contenido del hero
+    --wd-content-hero: 100%; // 12 columnas de 12 
+    
+    // alto del hero full
+    --hg-hero-full: 680px;  
+}
+
+.hero {
+    position: relative;
+    @include flexbox(
+        flex,
+        wrap,
+        row,
+        center,
+        center,
+        null
+    );
+    overflow: hidden;
+    
+    &--full {     
+        clip-path: polygon(0 0, 100% 0, 100% 98%, 0 94%);
+        height: var(--hg-hero-full);
+        
+        @include from(desktop) {
+            --hg-hero-full: 100vh; 
+        }
+    }
+    
+    &--small {
+        padding: var(--spacing-45) 0;
+    }
+}
+
+.hero__img,
+.hero__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero__img {
+    z-index: -5;
+    object-fit: cover;
+}
+
+.hero__overlay {
+    z-index: -1;
+    background: linear-gradient(rgba($primary,.75), rgba($primary,.75));
+}
+
+.hero__content {
+    width: calc(var(--wd-content-hero) - var(--pd-x-content-hero));
+    padding: 0 var(--pd-x-content-hero);
+    text-align: center;
+    color: var(--white);
+}
+
+@include from(tablet) {
+    :root {
+        // es el ancho del contenido
+        --wd-content-hero: 83.3333%; // 10 columnas de 12
+    }
+}
+
+@include from(desktop) {
+    :root {
+        --wd-content-hero: 66.6664%; // 8 columnas de 12
+    }
+
+    .hero {
+        &--full {
+            clip-path: polygon(0 0, 100% 0, 100% 96%, 0 89%);
+        }
+    }
+}
+
+@include from(widescreen) {
+    :root {
+        --wd-content-hero: 49.9998%; // 6 columnas de 12
+    }
+}
+
+@include from(fullhd) {
+    :root {
+        --wd-content-hero: 41.6665%; // 5 columnas de 12
+    }
+}

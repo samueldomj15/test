@@ -1,0 +1,121 @@
+/* ===================================================================
+    Estilos de los inputs de los formularios
+=================================================================== */
+$gray-placeholder: hsl(210, 14%, 80%);
+
+.field {
+   margin-bottom: var(--spacing-10); 
+}
+
+.field-group {
+    @include from(tablet) {
+        display: flex;
+        justify-content: space-between;
+        
+        .field {
+            width: 49%;
+        }
+    }
+}
+
+.label,
+.input,
+.help,
+select {
+    display: block;
+    width: 100%;  
+    max-width: 100%;
+}
+
+.label {
+    margin-bottom: var(--spacing-5);
+    @include font(txt-small);
+    font-weight: $medium;
+}
+
+.input,
+select {
+    padding: 11px 15px;
+    border: 1px solid var(--gray);
+    background-color: var(--white);
+    text-align: left;
+    @include font(txt-base);
+    
+    &:focus {
+        border-color: var(--secondary);
+        outline: none;
+        box-shadow: 0 0 0 2px rgba($secondary, .4);
+    }
+
+    &::placeholder {
+        color: $gray-placeholder;
+    }
+}
+
+.help {
+    @include font(txt-xsmall);
+}
+
+.input.danger {
+    border-color: var(--danger);
+    color: var(--danger);
+
+    &:focus {
+        box-shadow: 0 0 0 2px rgba($danger, .4);
+    }
+}
+
+.help.danger {
+    color: var(--danger);
+}
+
+.input.success {
+    border-color: var(--success);
+    color: var(--success);
+
+    &:focus {
+        box-shadow: 0 0 0 2px rgba($success, .4);
+    }
+}
+
+.help.success {
+    color: var(--success);
+}
+
+// inputs y select con iconos
+.select,
+.search,
+.control {
+    position: relative;
+    border-radius: 3px;
+
+    select {
+        appearance: none;
+    }
+
+    .icon {
+        position: absolute;
+        top: 0;
+        right: 15px;
+        bottom: 0;
+        @include flexbox (
+            flex,
+            null,
+            null,
+            center,
+            center,
+            null
+        );
+        text-align: center;
+        user-select: none;
+        pointer-events: none;
+        color: var(--gray);
+    }
+}
+
+.textarea {
+    height: 150px;
+    min-height: 120px;
+    min-width: 100%;
+    max-height: 500px;
+}

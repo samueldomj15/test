@@ -1,0 +1,108 @@
+/* ===================================================================
+    Estilos del modelo de caja (Margins: top, bottom)
+=================================================================== */
+:root {
+    --spacing-5: 5px;
+    --spacing-10: 10px;
+    --spacing-15: 15px;
+    --spacing-20: 20px;
+    --spacing-25: 25px;
+    --spacing-35: 35px;
+    --spacing-45: 45px;
+    --spacing-y-section: 70px;
+}
+
+// margen inferior
+.mb-5 {
+    margin-bottom: var(--spacing-5) !important;
+}
+
+.mb-10 {
+    margin-bottom: var(--spacing-10) !important;
+}
+
+.mb-15 {
+    margin-bottom: var(--spacing-15) !important;
+}
+
+.mb-20 {
+    margin-bottom: var(--spacing-20) !important;
+}
+
+.mb-25 {
+    margin-bottom: var(--spacing-25) !important;
+}
+
+.mb-35 {
+    margin-bottom: var(--spacing-35) !important;
+}
+
+.mb-45 {
+    margin-bottom: var(--spacing-45) !important;
+}
+
+// margen superior
+.mt-5 {
+    margin-top: var(--spacing-5) !important;
+}
+
+.mt-10 {
+    margin-top: var(--spacing-10) !important;
+}
+
+.mt-15 {
+    margin-top: var(--spacing-15) !important;
+}
+
+.mt-20 {
+    margin-top: var(--spacing-20) !important;
+}
+
+.mt-25 {
+    margin-top: var(--spacing-25) !important;
+}
+
+.mt-35 {
+    margin-top: var(--spacing-35) !important;
+}
+
+.mt-45 {
+    margin-top: var(--spacing-45) !important;
+}
+
+// centrado con margin
+.ml-auto {
+    margin-left: auto !important;
+}
+
+.mr-auto {
+    margin-right: auto !important;
+}
+
+.mg-x-auto {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.mt-70 {
+    margin-top: var(--spacing-y-section);
+}
+
+.mb-70 {
+    margin-bottom: var(--spacing-y-section);
+}
+
+.mg-y-70 {
+    margin: 70px 0;
+}
+
+.h100percent {
+    height: 100%;
+}
+
+.h100vh {
+    height: 100vh;
+}
+
+
+// Para modificar el espaciado en diferentes tamaños solo basta con modificar el valor de las variables

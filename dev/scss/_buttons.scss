@@ -1,0 +1,152 @@
+/* ===================================================================
+    Estilos de los botones
+=================================================================== */
+
+$primary-hover-button: hsl(215, 100%, 33%);
+$secondary-hover-button: hsl(211, 81%, 58%);
+$background-default-button: hsl(0, 0%, 96%);
+$success-hover-button: hsl(120, 80%, 48%);
+$warning-hover-button: hsl(45, 100%, 70%);
+$danger-hover-button: hsl(354, 70%, 67%);
+$txt-danger-button: hsl(354,61%,19%);
+$txt-warning-button: hsl(44,94%,19%);
+$txt-success-button: hsl(134, 61%, 21%);
+
+$pd-y-button: 11px;
+$pd-x-button: 20px;
+
+
+.button {
+    display: inline-block;
+    padding: $pd-y-button $pd-x-button;
+    border: 1px solid transparent;
+    background: $background-default-button;
+    font-family: 'Poppins', sans-serif;
+    font-weight: $regular;
+    @include font(txt-base);
+    text-align: center;
+    text-decoration: none;
+    color: var(--primary);
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+    letter-spacing: .2px;
+    transition: all .3s ease;
+}
+
+// tipos de botones
+.button-primary {
+    background-color: var(--primary);
+    color: var(--white);
+    &:hover {
+        background-color: $primary-hover-button;
+    }
+}
+
+.button-secondary {
+    background-color: var(--secondary);
+    color: var(--white);
+    &:hover {
+        background-color: $secondary-hover-button;
+    }
+}
+
+.button-white {
+    background-color: var(--white);
+    color: var(--primary);
+}
+
+.button-success {
+    background-color: var(--success);
+    color: var(--white);
+    &:hover {
+        background-color: $success-hover-button;
+    }
+}
+
+.button-warning {
+    background-color: var(--warning);
+    color: $txt-warning-button;
+    &:hover {
+        background-color: $warning-hover-button;
+    }
+}
+
+.button-danger {
+    background-color: var(--danger);
+    color: $txt-danger-button;
+    &:hover {
+        background-color: $danger-hover-button;
+    }
+}
+
+// Botones con border
+.button-outline {
+    background: none;
+}
+
+.button-primary.button-outline {
+    border-color: var(--primary);
+    color: var(--primary);
+    &:hover {
+        background-color: var(--primary);
+        color: var(--white);
+    }
+}
+
+.button-secondary.button-outline {
+    border-color: var(--secondary);
+    color: var(--secondary);
+    &:hover {
+        background-color: var(--secondary);
+        color: var(--white);
+    }
+}
+
+.button-white.button-outline {
+    border-color: var(--white);
+    color: var(--white);
+    &:hover {
+        background-color: var(--white);
+        color: var(--primary);
+    }
+}
+
+.button-success.button-outline {
+    border-color: var(--success);
+    color: var(--success);
+    &:hover {
+        background-color: var(--success);
+        color: var(--white);
+    }
+}
+
+.button-warning.button-outline {
+    border-color: var(--warning);
+    color: var(--warning);
+    &:hover {
+        background-color: var(--warning);
+        color: var(--dark);
+    }
+}
+
+.button-danger.button-outline {
+    border-color: var(--danger);
+    color: var(--danger);
+    &:hover {
+        background-color: var(--danger);
+        color: var(--white);
+    }
+}
+
+// botones de bloque w100%
+.button-block {
+    width: 100%;
+    display: block;
+}
+
+// boton pequeño
+.button-small{
+    padding: 5px 10px;
+    @include font(txt-small);
+}

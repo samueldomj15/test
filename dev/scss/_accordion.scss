@@ -1,0 +1,60 @@
+/* ===================================================================
+    Estilos del acordion
+=================================================================== */
+.accordion {
+    box-shadow: 0 20px 40px #e2e1e9;
+}
+
+.accordion__item {
+    overflow: hidden;
+}
+
+.accordion__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background-color: var(--white);
+    border-top: 1px solid rgba($gray, .5);
+    color: var(--darker);
+    font-weight: $medium;
+    cursor: pointer;
+    user-select: none;
+
+    .icon {
+        width: 30px;
+        height: 30px;
+        border: 1px solid var(--gray);
+        border-radius: 50px;
+        @include font(txt-xsmall);
+        text-align: center;
+        line-height: 28px;
+        
+        i {transition: all .3s ease;}
+    }
+}
+
+.accordion__body {
+    display: none;
+    padding: 15px 20px;
+    @include font(txt-small);
+    border-top: 1px solid rgba($gray, .5);
+    border-left: 5px solid var(--primary);
+    background-color: rgba(#e6e5ec, .25);
+    text-align: justify;
+}
+
+// Interacciones con Jquery
+.accordion__item.show {
+    .accordion__header {
+        color: var(--primary);
+
+        i {
+            transform: rotate(180deg);
+        }
+    }
+
+    .accordion__body {
+        display: block;
+    }
+}

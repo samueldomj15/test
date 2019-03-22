@@ -1,0 +1,75 @@
+/* ===================================================================
+    Estilos de las cards
+=================================================================== */
+$pd-content-card: 22px; 
+
+.card {
+    overflow: hidden;
+    box-shadow: 0 1px 5px rgba($primary, .35);
+
+    &--raised {
+        box-shadow: 0 10px 10px #e2e1e9;
+    }
+
+    &--border {
+        border: 1px solid rgba($primary, .15);
+    }
+
+    &--no-raised {
+        box-shadow: none;
+    }
+
+    &:hover {
+        .card__media-img {
+            transform: scale(1.02, 1.02);
+        }
+    }
+}
+
+.card__media {
+    margin: 0;
+
+    .card__media-img {
+        @include object-fit(100%, 250px, cover);
+        transition: transform 0.3s ease;
+        
+        @include from(widescreen) {
+            height: 215px;
+        }
+    }
+
+    .card__media-video {
+        display: block;
+        width: 100%;
+        height: 280px;
+
+        @include from(tablet) {
+            height: 350px;
+        }
+
+        @include from(desktop) {
+            height: 415px;
+        }
+
+        @include from(widescreen) {
+            height: 500px;
+        }
+    }
+}
+
+.card__content {
+    padding: $pd-content-card;
+    background-color: var(--white);
+    
+    .card__title {
+        color: var(--darker);
+        @include font(txt-base);
+        font-weight: $medium;
+    }
+}
+
+.card__actions {
+    background-color: var(--white);
+    padding: 15px $pd-content-card;
+    border-top: 1px solid rgba($primary, .15);
+}

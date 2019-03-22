@@ -1,0 +1,256 @@
+/* ===================================================================
+    Sección de Productos (s-products) inicio
+=================================================================== */
+.s-products {
+    margin-bottom: var(--spacing-y-section);
+    margin-top: var(--spacing-y-section);
+}
+
+
+/* ===================================================================
+    Sección de Nuestra Empresa (s-about)
+=================================================================== */
+.s-about {
+    margin-bottom: calc(var(--spacing-y-section) - var(--spacing-20)); // 70px de margen inferior, menos los 20px de spaciado de columnas = 50px
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 150px);
+        grid-gap: 15px;
+
+        @include from(tablet) {
+            grid-template-rows: repeat(2, 250px);
+        }
+    }
+
+    &__grid-item {
+        @include object-fit(100%, 100%, cover);
+    }
+}
+
+/* ===================================================================
+    Sección de RIS/PAC's (s-ris)
+=================================================================== */
+.s-ris {
+    margin-top: var(--spacing-y-section);
+    margin-bottom: var(--spacing-y-section);
+}
+
+/* ===================================================================
+    Sección de Testimonios (s-testimonials)
+=================================================================== */
+.s-testimonials {
+    $bg-testimonials: hsl(210, 36%, 96%);
+    padding: var(--spacing-35) 0;
+    margin-bottom: var(--spacing-y-section);
+    background-color: $bg-testimonials;
+}
+
+.testimonials__box {
+    position: relative;
+    padding: 30px;
+    border: 5px solid var(--primary);
+    text-align: center;
+    background-color: var(--white);
+
+    &::before {
+        position: absolute;
+        top: -10px;
+        left: 15px;
+        display: block;
+        font-size: 15.625rem;
+        color: rgba($primary, .18);
+        content: "\201C";
+    }
+}
+
+.testimonials__message {
+    margin-bottom: var(--spacing-25);
+    @include font(txt-base);
+}
+
+.testimonials__logo {
+    width: 130px !important;
+    margin: auto;
+
+    &--small {
+        width: 70px !important;
+    }
+}
+
+.owl-nav {
+    text-align: center;
+    .owl-prev,
+    .owl-next {
+        outline: none;
+        font-size: 30px !important;
+        margin: 0 12px;
+        color: rgba($primary, .25) !important
+    }
+}
+
+.owl-dots {
+    text-align: center;
+
+    .owl-dot {
+        display: inline-block;
+        height: 10px !important;
+        width: 10px !important;
+        background-color: rgba($primary, .25) !important;
+        border-radius: 50%;
+        margin: 10px 5px 0;
+
+    }
+
+    .owl-dot.active {
+        background-color: var(--primary) !important;
+    }
+}
+
+/* ===================================================================
+    Sección de Nuestras Marcas (s-our-brands)
+=================================================================== */
+.s-our-brands {
+    margin-bottom: var(--spacing-y-section);
+
+    &__logo {
+        width: 100px;
+        margin: auto;
+        opacity: .4;
+        filter: grayscale(75%);
+        transition: all .3s ease;
+
+        &:hover {
+            opacity: 1;
+            filter: grayscale(0);
+        }
+
+        &--small {
+            width: 60px;
+        }
+    }
+
+    &__video {
+        iframe {
+            display: block;
+            width: 100%;
+            height: 315px;
+        }
+    }
+}
+
+/* ===================================================================
+    Sección de Contacto (s-contact)
+=================================================================== */
+.s-contact {
+    margin-bottom: calc(var(--spacing-y-section) - var(--spacing-20));
+
+    &__map {
+        iframe {
+            display: block;
+            width: 100%;
+            height: 320px;
+
+            @include from(desktop) {
+                margin-top: var(--spacing-20);
+                height: 520px;
+            }
+        }
+    }
+}
+
+/* ===================================================================
+    Sección de Footer (site-footer)
+=================================================================== */
+.site-footer {
+    padding: var(--spacing-25) 0;
+    background: var(--primary);
+
+    &__social {
+        text-align: center;
+        border-bottom: 1px solid var(--white);
+        padding-bottom: var(--spacing-25);
+    }
+
+    &__social-link {
+        display: inline-block;
+        margin: 5px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        border: 1px solid var(--white);
+        border-radius: 50%;
+        color: var(--white);
+        font-size: 16px;
+        transition: all .3s ease;
+
+        &:hover {
+            background-color: var(--white);
+            color: var(--primary);
+        }
+    }
+}
+
+/* ===================================================================
+    Sección de Un solo producto (s-single-product)
+=================================================================== */
+.s-single-product {
+    margin-top: var(--spacing-y-section);
+    margin-bottom: var(--spacing-y-section);
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: calc(500px - 150px) 150px 20px auto;
+        grid-gap: 10px;
+
+        a {
+            &:first-child {
+                grid-column: 2 span;
+            }
+
+            &:last-child {
+                grid-column: 2 span;
+            }
+        }
+
+        span {
+            grid-column: 2 span;
+        }
+    }
+
+    &__grid-item {
+        @include object-fit(100%, 100%, cover);
+    }
+}
+
+/* ===================================================================
+    Sección de login administrador (s-login-admin)
+
+    TODOS LOS ESTILOS DE ADMIN
+=================================================================== */
+.form-admin {
+    padding: 35px;
+    background: var(--white);
+    box-shadow: 0 3px 10px rgba(#000, .25);
+}
+
+.s-login-admin {
+    height: 800px;
+    background: linear-gradient(rgba($primary,.75), rgba($primary,.75)),
+                url(../assets/hero-small.jpg) no-repeat center / cover;
+
+    @include from(desktop) {
+        height: 100vh;
+    }
+}
+
+/* ===================================================================
+    Sección de agregar producto (s-add-product)
+=================================================================== */
+
+
+/* ===================================================================
+    Sección de agregar producto (s-add-product)
+=================================================================== */

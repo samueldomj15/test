@@ -1,0 +1,117 @@
+.t1, .t2, .t3 {
+    font-weight: $bold;
+    color: var(--darker);
+}
+
+// titulos
+.t1 {
+    @include font(t1);
+}
+
+.t2 {
+    @include font(t2);
+}
+
+.t3 {
+    @include font(t3);
+}
+
+// Textos del body
+.txt-base {
+    @include font(txt-base);
+}
+
+.txt-small {
+    @include font(txt-small);
+}
+
+.txt-xsmall {
+    @include font(txt-xsmall);
+}
+
+// Alineación del texto y contenido centrado
+.txt-left,
+.content-left {
+    text-align: left;
+}
+
+.txt-center,
+.content-center {
+    text-align: center;
+}
+
+.txt-right,
+.content-right {
+    text-align: right;
+}
+
+.txt-justify,
+.content-justify {
+    text-align: justify;
+}
+
+// Grosor de fuente
+.regular {
+    font-weight: $regular !important;
+}
+
+.medium {
+    font-weight: $medium !important;
+}
+
+.bold {
+    font-weight: $bold !important;
+}
+
+// Color de texto
+.txt-primary {
+    color: var(--primary) !important;
+}
+
+.txt-secondary {
+    color: var(--secondary) !important;
+}
+
+.txt-darker {
+    color: var(--darker) !important;
+}
+
+.txt-dark {
+    color: var(--dark) !important;
+}
+
+.txt-gray {
+    color: var(--gray) !important;
+}
+
+.txt-white {
+    color: var(--white) !important;
+}
+
+.txt-danger {
+    color: var(--danger);
+}
+
+.txt-success {
+    color: var(--success);
+}
+
+.txt-warning {
+    color: var(--warning);
+}
+
+// borde inferior del titulo de cada sección
+.intro--border {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+        &::before {
+            position: absolute;
+            bottom: 0;
+            left: calc((100% - 80px) / 2);
+            width: 80px;
+            height: 5px;
+            background-image: linear-gradient(to right, rgba($primary, .99), rgba($primary, .99));
+            content: "";
+        }
+}

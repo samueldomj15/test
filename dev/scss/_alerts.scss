@@ -1,0 +1,25 @@
+$txt-danger-button: hsl(354,61%,19%);
+$txt-warning-button: hsl(44,94%,19%);
+
+.alert {
+    padding: 13px 20px;
+    @include font(txt-base);
+}
+
+.alert.danger {
+    background-color: var(--danger);
+    color: $txt-danger-button;
+    border: 1px solid $txt-danger-button;
+}
+
+.alert.warning {
+    background-color: var(--warning);
+    color: $txt-warning-button;
+    border: 1px solid $txt-warning-button;
+}
+
+.alert.success {
+    background-color: var(--success);
+    color: $txt-success-button;
+    border: 1px solid $txt-success-button;
+}
